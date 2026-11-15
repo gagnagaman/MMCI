@@ -1,7 +1,7 @@
 """
 Reproduce the Southern Ocean Wind Experiment from Lecture MMCI (Slides 25-28).
 
-Demonstrates the Greatbatch & Lu (2003) and Björnsson thesis:
+Demonstrates the Greatbatch & Lu (2003) mechanism:
 In the Stommel-Arons dynamical regime, non-uniform vertical upwelling
 (concentrated in the Southern Ocean by wind-driven Ekman divergence)
 creates an apparent linear relation between overturning strength q and

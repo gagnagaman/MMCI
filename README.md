@@ -25,7 +25,7 @@ David Straub (Tellus 1996) showed that these two classical models are mathematic
 
 ---
 
-## 2. The Resolution: Southern Ocean Winds (Greatbatch & Lu 2003; Björnsson)
+## 2. The Resolution: Southern Ocean Winds (Greatbatch & Lu 2003)
 
 If $q = k \Delta\rho$ contradicts thermal wind, why do Ocean General Circulation Models (OGCMs) consistently exhibit a linear relationship between $q$ and $\Delta\rho$?
 
