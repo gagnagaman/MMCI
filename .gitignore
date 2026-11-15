@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Generated figures and local presentation assets
+*.png
+figures/
+MMCI/
