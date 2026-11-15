@@ -51,6 +51,12 @@ Rannsoknir/MMCI/
 ├── gnanadesikan_pycnocline.py  # Pycnocline depth D(qn) & stability-curve wrapper
 ├── gnanadesikan_f_vs_overturning.py # Stability curve F vs qn (single panel)
 ├── wind_experiment.py          # Southern Ocean wind experiment (reproducing Slide 28)
+├── figures/                    # Generated lecture figures
+│   ├── stommel_stability.png
+│   ├── stommel_arons_standard.png
+│   ├── gnanadesikan_stability.png
+│   ├── gnanadesikan_f_vs_overturning.png
+│   └── wind_experiment_results.png
 ├── MMCI/                       # Original presentation materials (local only)
 │   ├── MMCI.pdf                # Full presentation slides
 │   ├── Fyrirlestur.tex         # LaTeX Beamer / Prosper slide source
@@ -59,8 +65,9 @@ Rannsoknir/MMCI/
 └── README.md                   # This documentation
 ```
 
-> This repository tracks the Python routines, the Jupyter notebook, and the README.
-> Generated PNG figures and the local `MMCI/` presentation folder are intentionally excluded.
+> This repository tracks the Python routines, the Jupyter notebook, the README, and
+> the generated figures in `figures/`. The local `MMCI/` presentation folder is
+> intentionally excluded.
 
 ---
 
@@ -72,31 +79,31 @@ Rannsoknir/MMCI/
    ```bash
    python3 stommel_box.py
    ```
-   Generates `stommel_stability.png` illustrating the stable and unstable branches and tipping point $F_c = \sigma^2 / (4\gamma)$.
+   Generates `figures/stommel_stability.png` illustrating the stable and unstable branches and tipping point $F_c = \sigma^2 / (4\gamma)$.
 
 2. **Stommel-Arons 2-Layer Model:**
    ```bash
    python3 stommel_arons.py
    ```
-   Generates `stommel_arons_standard.png` showing the 2D interface height $\eta(x, y)$, geostrophic velocity vectors, and the zonal mean profile $\bar{\eta}(y)$ demonstrating Straub's paradox.
+   Generates `figures/stommel_arons_standard.png` showing the 2D interface height $\eta(x, y)$, geostrophic velocity vectors, and the zonal mean profile $\bar{\eta}(y)$ demonstrating Straub's paradox.
 
 3. **Gnanadesikan (1999) Pycnocline Model:**
    ```bash
    python3 gnanadesikan_pycnocline.py
    ```
-   Generates `gnanadesikan_stability.png` showing pycnocline depth scaling $D(q_n)$ and the resulting asymmetric stability curve. The implementation uses the corrected Work.nb closure from the shared `gnanadesikan_model.py`.
+   Generates `figures/gnanadesikan_stability.png` showing pycnocline depth scaling $D(q_n)$ and the resulting asymmetric stability curve. The implementation uses the corrected Work.nb closure from the shared `gnanadesikan_model.py`.
 
 4. **Gnanadesikan Model Stability Curve:**
    ```bash
    python3 gnanadesikan_f_vs_overturning.py
    ```
-   Generates `gnanadesikan_f_vs_overturning.png`, the dedicated stability curve for the Gnanadesikan model: the stable and unstable branches of $q_n(F)$ and the saddle-node tipping point ($F_c \approx 3.1$ Sv at $q_c \approx 27$ Sv).
+   Generates `figures/gnanadesikan_f_vs_overturning.png`, the dedicated stability curve for the Gnanadesikan model: the stable and unstable branches of $q_n(F)$ and the saddle-node tipping point ($F_c \approx 3.1$ Sv at $q_c \approx 27$ Sv).
 
 5. **Southern Ocean Wind Experiment (Slides 25–28):**
    ```bash
    python3 wind_experiment.py
    ```
-   Generates `wind_experiment_results.png`, proving the emergent linear relation $q \propto \Delta\bar{\rho}$.
+   Generates `figures/wind_experiment_results.png`, proving the emergent linear relation $q \propto \Delta\bar{\rho}$.
 
 ---
 

@@ -30,6 +30,7 @@ from gnanadesikan_model import GnanadesikanBoxModel
 
 DEFAULT_OUT = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
+    "figures",
     "gnanadesikan_f_vs_overturning.png",
 )
 
@@ -89,6 +90,9 @@ def plot_single_f_vs_overturning(save_path: str = None, C: float = 0.15):
     ax.legend(loc="lower right", fontsize=9)
 
     plt.tight_layout()
+    out_dir = os.path.dirname(save_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
     fig.savefig(save_path, dpi=200)
 
     print(f"Saved single F vs Overturning plot to: {save_path}")

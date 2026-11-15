@@ -3,7 +3,8 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
-# Generated figures and local presentation assets
-*.png
-figures/
+# Local presentation assets
 MMCI/
+
+# Generated figures outside the tracked figures/ directory
+/*.png

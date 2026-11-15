@@ -9,6 +9,7 @@ References:
 """
 
 from typing import Tuple, Optional, Dict
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -192,4 +193,8 @@ if __name__ == "__main__":
     sa = StommelAronsModel()
     res = sa.compute_fields(so_enhanced=False)
     print(f"Computed standard Stommel-Arons field. Total upwelling q = {res['total_q_Sv']:.2f} Sv")
-    sa.plot_solution(res, "Standard Stommel-Arons Abyssal Flow", "stommel_arons_standard.png")
+
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "figures")
+    os.makedirs(out_dir, exist_ok=True)
+    sa.plot_solution(res, "Standard Stommel-Arons Abyssal Flow",
+                     os.path.join(out_dir, "stommel_arons_standard.png"))

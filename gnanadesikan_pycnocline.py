@@ -36,6 +36,7 @@ from gnanadesikan_model import GnanadesikanBoxModel
 
 DEFAULT_OUT = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
+    "figures",
     "gnanadesikan_stability.png",
 )
 
@@ -144,6 +145,9 @@ class GnanadesikanPycnoclineModel(GnanadesikanBoxModel):
         ax2.legend(loc="lower right", fontsize=9)
 
         plt.tight_layout()
+        out_dir = os.path.dirname(save_path)
+        if out_dir:
+            os.makedirs(out_dir, exist_ok=True)
         fig.savefig(save_path, dpi=200)
         print(f"Saved Gnanadesikan stability plot to: {save_path}")
         print(f"Tipping point: F = {F_c:.3f} Sv at qn = {qn_c:.2f} Sv "

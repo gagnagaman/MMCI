@@ -14,16 +14,30 @@ Reference:
     Journal of Physical Oceanography, 33(7), 1618-1632.
 """
 
+import os
+import sys
 from typing import Dict
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")
+if "ipykernel" not in sys.modules:
+    matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from stommel_arons import StommelAronsModel
 
 
-def run_wind_experiment(num_cases: int = 19, save_path: str = "wind_experiment_results.png"):
+def run_wind_experiment(num_cases: int = 19, save_path: str = None):
+    if save_path is None:
+        save_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "figures",
+            "wind_experiment_results.png",
+        )
+
+    out_dir = os.path.dirname(save_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+
     model = StommelAronsModel(
         beta=2.0e-11,
         H=4000.0,

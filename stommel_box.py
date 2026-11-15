@@ -7,6 +7,7 @@ Reference:
 """
 
 from typing import Tuple, Dict
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -112,4 +113,7 @@ if __name__ == "__main__":
     print(f"Sigma (thermal driving): {model.sigma:.2f} Sv")
     print(f"Critical freshwater flux Fc: {model.critical_flux:.4f} Sv")
     print(f"Critical overturning qc: {model.critical_flow:.2f} Sv")
-    model.plot_stability_curve("stommel_stability.png")
+
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "figures")
+    os.makedirs(out_dir, exist_ok=True)
+    model.plot_stability_curve(os.path.join(out_dir, "stommel_stability.png"))
